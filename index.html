@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    
+</head>
+<body>
+    <main>
+        <button class="welcome" onclick="changeState(welcome)">
+            <figure></figure>
+            <p>Welcome</p>
+        </button>
+        <section id="welcome">
+            <div class="top">
+                <h2>Welcome</h2>
+                <button class="close" onclick="changeState(welcome)">X</button>
+            </div>
+            <div class="main">
+                    <p>Welcome to my <span>WebSite</span></p>
+                <div>
+                    <p><span>My name is Hristijan.</span><br><br>
+                    I'm a student curently studying Computer Science
+                    with a keen interest in back-end programing and machine learning.
+                    To look at some of my projects click on one of the buttons on the side.
+                    </p>
+                    <ul>
+                        <!-- Projects -->
+                        <li><button onclick="changeState(tic_tac_toe)">Tic-Tac-Toe</button></li>
+                        <li><button onclick="changeState(neon)">Neon text</button></li>
+                        <li><button onclick="changeState(draw)">Draw</button></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottom">
+                <p>Thank you for visiting my site to get in contact click the "Contact me" icon.</p>
+                <button class="close" onclick="changeState(welcome)">
+                    <p>Close</p>
+                </button>
+            </div>
+        </section>
+
+
+        <button class="interests" onclick="changeState(interests)">
+            <figure></figure>
+            <p>Interests</p>
+        </button>
+        <section id="interests">
+            <div class="top">
+                <h2>Interests</h2>
+                <button class="close" onclick="changeState(interests)">X</button>
+            </div>
+            <div class="main">
+                <p>
+                    My interests include:
+                </p>
+                <div>
+                    <p>
+                            Robotics;<br>
+                            3D-printing and modeling;<br>
+                            Playing guitar;<br>
+                            Judo;
+                    </p>
+                </div>
+            </div>
+            <div class="bottom">
+                
+            </div>
+        </section>
+
+
+        <button class="contact" onclick="changeState(contact)">
+            <figure></figure>
+            <p>Contact me</p>
+        </button>
+        <section id="contact">
+            <div class="top">
+                <h2>Inbox</h2>
+                <button class="close" onclick="changeState(contact)">X</button>
+            </div>
+            <div class="main">
+                    <p>Thank you fo contacting me.</p>
+                
+                <form>
+                    <div class="heading">
+                        <div>
+                        <label for="adress">From:</label>
+                        <input type="email" name="adress" id="adress">       
+                        </div> 
+                        <div>    
+                        <label for="subject">Subject:</label>
+                        <input type="text" name="subject" id="subject">
+                        </div>
+                    </div>
+                    <textarea name="mail" id="mail"></textarea>
+                </form>
+            </div>
+            <div class="bottom">
+                <p></p>
+                <button class="send" onclick="sendMail(adress,subject,mail)">
+                    <p>Send</p>
+                </button>
+            </div>            
+        </section>
+        <div id="projects">
+
+            <article id="tic_tac_toe">
+                <div class="top">
+                    <h2>Tic-Tac-Toe</h2>
+                    <button class="close" onclick="changeState(tic_tac_toe)">X</button>
+                </div>
+                <div class="main">
+                    <div class="cell" id="0" ></div>
+                    <div class="cell" id="1" ></div>
+                    <div class="cell" id="2" ></div>
+                    <div class="cell" id="3" ></div>
+                    <div class="cell" id="4" ></div>
+                    <div class="cell" id="5" ></div>
+                    <div class="cell" id="6" ></div>
+                    <div class="cell" id="7" ></div>
+                    <div class="cell" id="8" ></div>
+                </div>
+                <div class="bottom">
+                    <p id="status"></p>
+                    <button class="reset" onclick="reset()">Reset</button>
+                </div>
+                <script src="tic_tac_toe.js"></script>
+            </article>
+
+            <article id="neon">
+                <div class="top">
+                    <h2>Neon Text</h2>
+                    <button class="close" onclick="changeState(neon)">X</button>
+                </div>
+                <div class="main">
+                    <h3 contenteditable="true">Neon_Text</h3>
+                </div>
+            </article>
+
+            <article id="draw">
+                <div class="top">
+                    <h2>Draw</h2>
+                    <button class="close" onclick="changeState(draw)">X</button>
+                </div>
+                <div class="main" id="container">
+                    <canvas></canvas>
+                </div>
+                <div class="bottom">
+                    <button class="generate" onclick="ctx.clearRect(0, 0, 250, 350)">Clear</button>
+                </div>
+                <!-- <script src="l_system.js"></script> -->
+                <script src="draw.js"></script>
+            </article>
+        </div>
+    </main>
+    <footer>
+        <div class="button">
+            <img src="images/logo.png" alt="">
+            <p>Start</p>
+        </div>
+        <time datetime=""></time>
+    </footer>
+</body>
+</html>
